@@ -14,7 +14,7 @@ namespace LargeScaleLLM
 
             Thread trainingThread = new Thread(() =>
             {
-                nn.Train(epochs: 100000, batchSize: 500);
+                nn.Train(epochs: 1000, batchSize: 500);
             });
 
             trainingThread.Start();
@@ -137,6 +137,7 @@ namespace LargeScaleLLM
                 for (int j = 0; j < features; j++)
                 {
                     data[i][j] = rand.NextDouble();
+                    //Console.WriteLine("data[i][j]" + i+" " +j+" " + data[i][j]);
                 }
             }
             return data;
